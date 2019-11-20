@@ -16,7 +16,7 @@ export type NoSleepProps = {
   
 class NoSleep extends React.Component<NoSleepProps>{
     videoRef: RefObject<HTMLVideoElement> = React.createRef();
-    interval: NodeJS.Timeout | null = null;
+    interval?: NodeJS.Timeout;
 
     componentDidMount() {
         console.log("Enabling Sleep Lock");
