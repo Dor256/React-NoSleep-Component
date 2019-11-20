@@ -10,25 +10,17 @@ const videoStyle = {
     height: "0px"
 }
 
-export type NoSleepState = {
-    isPlaying: boolean
-}
-
 export type NoSleepProps = {
     children?: JSX.Element | JSX.Element[]
 }
   
-class NoSleep extends React.Component<NoSleepProps, NoSleepState>{
+class NoSleep extends React.Component<NoSleepProps>{
     state = {isPlaying: false};
     videoRef: RefObject<HTMLVideoElement> = React.createRef();
     interval: NodeJS.Timeout | null = null;
 
     componentDidMount() {
         console.log("Enabling Sleep Lock");
-        this.setState({isPlaying: true});
-    }
-
-    componentDidUpdate() {
         if(this.videoRef.current) {
             const video = this.videoRef.current;
             this.interval = setInterval(() => {
