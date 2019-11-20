@@ -15,7 +15,6 @@ export type NoSleepProps = {
 }
   
 class NoSleep extends React.Component<NoSleepProps>{
-    state = {isPlaying: false};
     videoRef: RefObject<HTMLVideoElement> = React.createRef();
     interval: NodeJS.Timeout | null = null;
 
